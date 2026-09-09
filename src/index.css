@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #0C0C10;
+  --color-brand-surface: #131318;
+  --color-brand-surfaceMuted: #1A1A22;
+  --color-brand-card: #16161E;
+  --color-brand-border: #252532;
+  --color-brand-borderLight: #323242;
+  --color-brand-accent: #E2C974;
+  --color-brand-accentLight: #F3DE9A;
+  --color-brand-textMuted: #8F8E9B;
+  --color-brand-textSubtle: #626170;
+
+  --font-serif: 'Bodoni Moda', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background-color: #0C0C10;
+  color: #F5F4F0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #E2C974;
+  color: #0C0C10;
+}
+
+/* Subtle noise grain simulation */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.text-glow {
+  text-shadow: 0 0 35px rgba(226, 201, 116, 0.25);
+}
+
+/* Card hover shine effect */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(26, 26, 34, 0.7) 0%, rgba(18, 18, 24, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel:hover {
+  border-color: rgba(226, 201, 116, 0.3);
+}
+
+/* 3D Mockup perspective tilts */
+.project-card-perspective {
+  perspective: 1200px;
+}
+
+.tilt-screen {
+  transform: rotateX(7deg) rotateY(-7deg) rotateZ(1deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+  box-shadow: -20px 30px 60px -15px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.project-card-perspective:hover .tilt-screen {
+  transform: rotateX(2deg) rotateY(-2deg) rotateZ(0deg) scale(1.02);
+  box-shadow: -10px 20px 70px -10px rgba(226, 201, 116, 0.15), 0 0 0 1px rgba(226, 201, 116, 0.35);
+}
+
+/* Floating UI elements in work cards */
+.floating-badge {
+  animation: floatBadge 4s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0C10;
+}
+::-webkit-scrollbar-thumb {
+  background: #252532;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E2C974;
+}
