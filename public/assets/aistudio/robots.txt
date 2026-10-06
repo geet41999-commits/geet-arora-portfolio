@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://geet-arora-portfolio.netlify.app/sitemap.xml
